@@ -26,6 +26,52 @@ def create_test_user(user_repository, test_user, test_user_data):
     return _create_user
 
 
+def test_create_user(user_repository, create_test_user, test_user_data):
+    created_user = create_test_user()
+
+    assert created_user.id == test_user_data["id"]
+    assert created_user.name == test_user_data["name"]
+    assert created_user.email == test_user_data["email"]
+
+    # Clean up
+    user_repository.delete_user(created_user.id)
+
+
+def test_get_user(user_repository, create_test_user):
+    created_user = create_test_user()
+
+    fetched_user = user_repository.get_user(str(created_user.id))
+
+    assert fetched_user.id == created_user.id
+    assert fetched_user.name == created_user.name
+    assert fetched_user.email == created_user.email
+
+    # Clean up
+    user_repository.delete_user(created_user.id)
+
+
+def test_update_user(user_repository, create_test_user):
+    created_user = create_test_user()
+
+    updated_data = {"name": "Updated Test User", "phone_number": "9876543210"}
+    updated_user = user_repository.update_user(created_user.id, updated_data)
+
+    assert updated_user.name == updated_data["name"]
+    assert updated_user.phone_number == updated_data["phone_number"]
+
+    # Clean up
+    user_repository.delete_user(created_user.id)
+
+
+def test_delete_user(user_repository, create_test_user):
+    created_user = create_test_user()
+
+    user_repository.delete_user(created_user.id)
+
+    with pytest.raises(Exception):
+        user_repository.get_user(created_user.id)
+
+
 # @pytest.fixture
 # def test_user_data():
 #     return {
