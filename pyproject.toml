@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "supabase-integration"
+version = "0.1.0"
+description = ""
+authors = ["mwilsch <marius.santiago.wilsch@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.2.2"
+pydantic = "^2.7.4"
+supabase = "^2.5.1"
+email-validator = "^2.2.0"
+pytest-sugar = "^1.0.0"
+
+[tool.pytest.ini_options]
+addopts = "-v --tb=short --show-capture=no -p no:warnings"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

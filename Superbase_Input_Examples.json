@@ -1,0 +1,129 @@
+Table: User
+Scenario 1: all key:value pairs available
+Hint: "Created_at" is not listed as this shall be created by Supbase
+{
+    "Name": "John Doe",
+    "UserID": "12345",
+    "ThreadID": "67890",
+    "LogIn": "john.doe@login.com",
+    "PhoneNumber": "123-456-7890",
+    "Email": "john.doe@example.com",
+    "SocialMedia": "Facebook",
+    "SocialMediaName": "JohnDoeFB",
+    "CommunicationChannel": "Email",
+    "CommunicationChannelName": "Primary Email",
+    "LastTimeContacted": "2024-06-23"
+  }
+
+  Scenario 2: only a few key:value pairs available
+  {
+    "Name": "John Doe",
+    "UserID": "12345",
+    "ThreadID": "67890",
+    "LogIn": "john.doe@login.com",
+    "PhoneNumber": "",
+    "Email": "john.doe@example.com",
+    "SocialMedia": "",
+    "SocialMediaName": "",
+    "CommunicationChannel": "",
+    "CommunicationChannelName": "",
+    "LastTimeContacted": ""
+  }
+
+  Scenario 3: not all keys are available
+  {
+    "Name": "John Doe",
+    "UserID": "12345",
+    "ThreadID": "67890",
+    "LogIn": "john.doe@login.com",
+    "PhoneNumber": "",
+    "Email": ""
+  }
+  -----------------------------------------------------------------------------
+  Table Filter
+  Scenario 1
+  {
+    "Name": "Sample Name",
+    "UserID": "12345",
+    "ThreadID": "67890",
+    "Filter": "Filter1",
+    "Budget_from": 100000,
+    "Budget_to": 500000,
+    "CommercialType": "Office",
+    "PropertyType": "Commercial",
+    "Size_from": 1000,
+    "Size_to": 1500,
+    "Bedrooms_from": 1,
+    "Bedrooms_to": 3,
+    "Bathrooms_from": 1,
+    "Bathrooms_to": 2,
+    "Floor_from": 5,
+    "Floor_to": 10,
+    "TotalFloors": 15,
+    "Balcony_Size_from": 2,
+    "Balcony_Size_to": 5,
+    "Furnishing": "Furnished",
+    "Parking": 2,
+    "Year_of_Completion_from": 2020,
+    "Year_of_Completion_to": 2023,
+    "Location": "Downtown",
+    "Amenities": ["Pool", "Gym", "Security"],
+    "Other_wishes": ["Close to metro", "Pet friendly"]
+  }
+  Scenario 2
+  {
+    "Name": "Sample Name",
+    "UserID": "12345",
+    "ThreadID": "67890",
+    "Filter": "Filter1",
+    "Budget_from": 100000,
+    "Budget_to": 500000,
+    "CommercialType": "Office",
+    "PropertyType": "Commercial",
+    "Size_from": null,
+    "Size_to": null,
+    "Bedrooms_from": 1,
+    "Bedrooms_to": 3,
+    "Bathrooms_from": 1,
+    "Bathrooms_to": 2,
+    "Floor_from": null,
+    "Floor_to": null,
+    "TotalFloors": 15,
+    "Balcony_Size_from": 2,
+    "Balcony_Size_to": 5,
+    "Furnishing": "Furnished",
+    "Parking": 2,
+    "Year_of_Completion_from": null,
+    "Year_of_Completion_to": null,
+    "Location": "Downtown",
+    "Amenities": ["Pool", "Gym", "Security"],
+    "Other_wishes": ["Close to metro", "Pet friendly"]
+  }
+  -----------------------------------------------------------------------------
+  Table Thread
+  Scenario 1
+  {
+    "ThreadID": "67890",
+    "Name": "John Doe",
+    "UserID": "12345",
+    "UserID_Status": "Registered",
+    "Meeting_Booked": true,
+    "Meeting_Booked_at": "2024-06-25T14:00:00",
+    "User_Feedback": "Very satisfied",
+    "Conversation": "Detailed discussion about project requirements"
+  }
+
+  Scenario 2
+  {
+    "ThreadID": "67890",
+    "Name": "John Doe",
+    "UserID": "12345",
+    "UserID_Status": "New",
+    "Meeting_Booked": false,
+    "Meeting_Booked_at": null,
+    "User_Feedback": "",
+    "Conversation": "Initial contact, no details discussed"
+  }
+  
+
+  
