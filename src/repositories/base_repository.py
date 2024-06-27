@@ -31,17 +31,17 @@ class BaseRepository:
             "create", self.supabase.table(self.table).insert(data)
         )
 
-    def _read(self, id: str):
+    def _read(self, filterValue: str, column: str = "id"):
         return self._execute_operation(
-            "read", self.supabase.table(self.table).select("*").eq("id", id)
+            "read", self.supabase.table(self.table).select("*").eq(column, filterValue)
         )
 
-    def _update(self, id: str, data: dict):
+    def _update(self, value: str, data: dict, column: str = "id"):
         return self._execute_operation(
-            "update", self.supabase.table(self.table).update(data).eq("id", id)
+            "update", self.supabase.table(self.table).update(data).eq(column, value)
         )
 
-    def _delete(self, id: str):
+    def _delete(self, value: str, column: str = "id"):
         return self._execute_operation(
-            "delete", self.supabase.table(self.table).delete().eq("id", id)
+            "delete", self.supabase.table(self.table).delete().eq(column, value)
         )

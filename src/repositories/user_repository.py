@@ -7,7 +7,7 @@ from ..lib.supabase_client import SupabaseClient
 
 class UserRepository(BaseRepository):
     def __init__(self, supabase_client: SupabaseClient):
-        super().__init__(supabase_client, "users")
+        super().__init__(supabase_client, table_name="users")
 
     def create_user(self, user: User) -> User:
         response = self._create(user.model_dump())

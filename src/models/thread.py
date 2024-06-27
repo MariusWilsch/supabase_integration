@@ -7,17 +7,7 @@ class Thread(BaseModel):
     """Represents a conversation thread in the chat app.
 
     Member variables:
-        id (UUID4): Unique identifier which references the user id in the custom user table.
-        created_at (datetime): Timestamp of thread creation.
-        name Optional[str]: #???
-        user_id (UUID4): #! Proably the same as id. Should we just remove it?
-        status (Optional[str]): #???
-        meeting_booked (Optional[bool]): If the user has booked a meeting.
-        meeting_date (Optional[datetime]): Date of the meeting.
-        user_feedback (Optional[str]): #???
-        conversation (Optional[str]): Conversation between the user and the chatbot.
-        costs (Optional[float]): Costs of the entire conversation.
-        time_spent_in_conve (Optional[float]): #???
+        TBD
 
     Class Methods:
         from_dict: Creates a Thread instance from a supabase response.
@@ -26,17 +16,17 @@ class Thread(BaseModel):
         Thread: A Thread instance.
     """
 
-    id: UUID4
-    created_at: datetime
-    name: Optional[str]
-    user_id: Optional[UUID4]
-    status: Optional[str]
-    meeting_booked: Optional[bool]
-    meeting_date: Optional[datetime]
-    user_feedback: Optional[str]
-    conversation: Optional[str]
-    costs: Optional[float]
-    time_spent_in_conversation: Optional[float]
+    id: Optional[str]
+    user_id: str
+    created_at: Optional[datetime] = None
+    name: Optional[str] = None
+    status: Optional[str] = None
+    meeting_booked: Optional[bool] = None
+    meeting_date: Optional[datetime] = None
+    user_feedback: Optional[str] = None
+    conversation: Optional[dict] = None
+    costs: Optional[float] = None
+    time_spent_in_conversation: Optional[float] = None
 
     @classmethod
     def from_dict(cls, data: Dict):
