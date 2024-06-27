@@ -3,11 +3,11 @@ from uuid import uuid4
 from src.models import Thread, User
 
 
-@pytest.fixture
-def test_thread_data(create_test_user):
+@pytest.fixture(scope="function")
+def test_thread_data(test_user):
     return {
         "id": str(uuid4()),
-        "user_id": create_test_user.id,
+        "user_id": test_user.id,
         "name": "Test Thread",
         "status": "active",
         "meeting_booked": False,
@@ -27,7 +27,6 @@ def test_create_thread(thread_repository, test_thread_data):
 
     # Clean up
     thread_repository.delete_thread(str(created_thread.id))
-
 
 def test_get_thread_by_id(thread_repository, test_thread_data):
     thread = Thread(**test_thread_data)
@@ -73,7 +72,9 @@ def test_delete_thread(thread_repository, test_thread_data):
 def test_get_threads_by_user_id(thread_repository, test_thread_data, test_user):
     # Create multiple threads for the user
     thread1 = Thread(**test_thread_data)
-    thread2 = Thread(**{**test_thread_data, "name": "Test Thread 2", "id": str(uuid4())})
+    thread2 = Thread(
+        **{**test_thread_data, "name": "Test Thread 2", "id": str(uuid4())}
+    )
 
     created_thread1 = thread_repository.create_thread(thread1)
     created_thread2 = thread_repository.create_thread(thread2)

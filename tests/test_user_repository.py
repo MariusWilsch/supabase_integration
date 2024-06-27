@@ -1,12 +1,8 @@
-import pytest, os, dotenv
+import pytest
 from uuid import uuid4
 from src.models.user import User
-from datetime import datetime
 from src.lib.supabase_client import SupabaseClient
-
-
-# Load environment variables from .env file
-dotenv.load_dotenv()
+from src.repositories import UserRepository, ThreadRepository
 
 
 @pytest.fixture(scope="module")
