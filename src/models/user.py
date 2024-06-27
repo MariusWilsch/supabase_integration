@@ -60,14 +60,3 @@ class User(BaseModel):
     communication_channel: Optional[str] = None
     communication_channel_name: Optional[str] = None
     last_contacted: Optional[datetime] = None
-
-    @classmethod
-    def update(cls, original: "User", updates: Dict) -> "User":
-        # Create a dict of the current user data
-        current_data = original.model_dump()
-
-        # Update the data with the new updates
-        current_data.update(updates)
-
-        # Create and return a new User instance with the updated data
-        return cls(**current_data)

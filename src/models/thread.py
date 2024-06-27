@@ -27,7 +27,3 @@ class Thread(BaseModel):
     conversation: Optional[dict] = None
     costs: Optional[float] = None
     time_spent_in_conversation: Optional[float] = None
-
-    @classmethod
-    def from_dict(cls, data: Dict):
-        return cls(**data)
