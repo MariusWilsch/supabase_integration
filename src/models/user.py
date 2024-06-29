@@ -54,7 +54,7 @@ class User(BaseModel):
     user_id: Optional[str] = None
     login: Optional[str] = None
     phone_number: Optional[str] = None
-    email: EmailStr
+    email: Optional[str] = None
     social_media: Optional[str] = None
     social_media_name: Optional[str] = None
     communication_channel: Optional[str] = None

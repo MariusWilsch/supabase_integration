@@ -1,5 +1,5 @@
 from .repository_exception import RepositoryException
-from ..lib.supabase_client import SupabaseClient
+from lib.supabase_client import SupabaseClient
 import logging
 
 

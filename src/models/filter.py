@@ -16,7 +16,7 @@ class Filter(BaseModel):
 
     id: Optional[str]
     user_id: str
-    thread_id: str
+    thread_id: Optional[str] = None
     created_at: Optional[datetime] = None
     name: Optional[str] = None
     budget_from: Optional[int] = None
