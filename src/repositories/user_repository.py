@@ -13,14 +13,14 @@ class UserRepository(BaseRepository):
         return response.data[0]
 
     def get_user(self, user_id: str) -> dict:
-        response = self._read(user_id)
+        response = self._read(user_id, "user_id")
         # Process the response and return a User object
         return response.data[0]
 
     def update_user(self, user_id: str, updated_data: dict) -> dict:
-        response = self._update(user_id, updated_data)
+        response = self._update(user_id, updated_data, "user_id")
         # Process the response and return a User object
         return response.data[0]
 
     def delete_user(self, user_id: str) -> None:
-        self._delete(user_id)
+        self._delete(user_id, "user_id")

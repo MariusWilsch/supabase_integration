@@ -10,7 +10,7 @@ class BaseRepository:
 
     def _handle_error(self, operation: str, error: Exception):
         """Handle and log errors, then raise a RepositoryException."""
-        logging.error(f"Error during {operation}: {str(error)}")
+        logging.error(f"\n{"-" * 50}\nError during {operation}: {str(error)}\n{'-' * 50}")
         raise RepositoryException(f"Error during {operation}: {str(error)}")
 
     def _execute_operation(self, operation: str, query):
@@ -31,17 +31,21 @@ class BaseRepository:
             "create", self.supabase.table(self.table).insert(data)
         )
 
-    def _read(self, filterValue: str, column: str = "id"):
+    def _read(self, filterValue: str, column: str):
         return self._execute_operation(
-            "read", self.supabase.table(self.table).select("*").eq(column, filterValue)
+            "read",
+            self.supabase.table(self.table)
+            .select("*")
+            .eq(column, filterValue)
+            .order("created_at", desc=True),
         )
 
-    def _update(self, value: str, data: dict, column: str = "id"):
+    def _update(self, value: str, data: dict, column: str):
         return self._execute_operation(
             "update", self.supabase.table(self.table).update(data).eq(column, value)
         )
 
-    def _delete(self, value: str, column: str = "id"):
+    def _delete(self, value: str, column: str):
         return self._execute_operation(
             "delete", self.supabase.table(self.table).delete().eq(column, value)
         )

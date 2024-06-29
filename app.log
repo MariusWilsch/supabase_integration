@@ -1,2 +1,76 @@
 2024-06-27 17:05:24,513 - root - ERROR - Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-27 15:05:24.523155+00, Test Thread, b2764cea-81c9-446a-ab14-25380f91f52f, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "id" of relation "threads" violates not-null constraint'}
 2024-06-27 17:06:48,693 - root - ERROR - Error during create: {'code': '23502', 'details': 'Failing row contains (null, Test Filter, 2024-06-27 15:06:48.68497+00, f595d50a-18cc-4681-85ea-71b6efbd58ed, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "id" of relation "filters" violates not-null constraint'}
+2024-06-29 11:46:45,562 - root - ERROR - Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:46:45.545604+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+2024-06-29 11:47:05,459 - root - ERROR - Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:47:05.469268+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+2024-06-29 11:48:59,518 - root - ERROR - 
+Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:48:59.525358+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+
+2024-06-29 11:49:33,352 - root - ERROR - 
+----------------------------------------------------------------------------------------------------
+Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:49:33.364266+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+2024-06-29 11:49:40,470 - root - ERROR - 
+----------------------------------------------------------------------------------------------------
+Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:49:40.47578+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+2024-06-29 11:49:58,135 - root - ERROR - 
+--------------------------------------------------Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:49:58.142525+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+--------------------------------------------------
+2024-06-29 11:50:07,760 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23502', 'details': 'Failing row contains (null, 2024-06-29 09:50:07.759304+00, Test Thread, null, null, f, null, null, null, null, null).', 'hint': None, 'message': 'null value in column "thread_id" of relation "threads" violates not-null constraint'}
+--------------------------------------------------
+2024-06-29 11:53:32,747 - root - ERROR - 
+--------------------------------------------------
+Error during delete: {'code': '42703', 'details': None, 'hint': None, 'message': 'column users.id does not exist'}
+--------------------------------------------------
+2024-06-29 11:54:24,728 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286LhfStfUvgwvBUm) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:00:08,250 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286LhfStfUvgwvBUp) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:00:20,584 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286LhfStfUvgwvBUp) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:01:01,174 - root - ERROR - 
+--------------------------------------------------
+Error during update: {'code': '42703', 'details': None, 'hint': None, 'message': 'column threads.id does not exist'}
+--------------------------------------------------
+2024-06-29 12:02:25,740 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_abcdfg) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:02:33,378 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_abcdfg) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:03:51,768 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_abcdad) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:04:13,856 - root - ERROR - 
+--------------------------------------------------
+Error during delete: {'code': '23503', 'details': 'Key (user_id)=(b523b5e3-727f-4052-a378-9a5bf1837712) is still referenced from table "threads".', 'hint': None, 'message': 'update or delete on table "users" violates foreign key constraint "threads_user_id_fkey" on table "threads"'}
+--------------------------------------------------
+2024-06-29 12:04:36,274 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_cdf) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:09:08,318 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_123) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:09:28,279 - root - ERROR - 
+--------------------------------------------------
+Error during delete: {'code': '23503', 'details': 'Key (user_id)=(841fc14a-db6c-4254-baa4-ece5bb57e45e) is still referenced from table "threads".', 'hint': None, 'message': 'update or delete on table "users" violates foreign key constraint "threads_user_id_fkey" on table "threads"'}
+--------------------------------------------------
+2024-06-29 12:16:36,910 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_12345) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
+2024-06-29 12:16:46,889 - root - ERROR - 
+--------------------------------------------------
+Error during create: {'code': '23505', 'details': 'Key (thread_id)=(thread_4hIKWeW286_12345) already exists.', 'hint': None, 'message': 'duplicate key value violates unique constraint "threads_pkey"'}
+--------------------------------------------------
